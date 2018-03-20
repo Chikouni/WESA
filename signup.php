@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
 
     //Hashage du MDP
-    $passwordHash = password_hash($pass, PASSWORD_BCRYPT, array("cost" => 12));
+    $passwordHash = password_hash($pass, PASSWORD_BCRYPT);
     
     //Insert dans la BDD
     $sql = "INSERT INTO membres (pseudo, password, email) VALUES (:identifiant, :password, :email)";
@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
     $result = $stmt->execute();
     
     if($result){
-        
+
         echo 'Félicitation vous avez un compte WESA !';
     }
 

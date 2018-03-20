@@ -33,8 +33,9 @@ confirm_password.onkeyup = validatePassword;
                   $("<span class='exists'>Pseudo déjà utilisé!</span>").insertAfter("#pseudo");
                     $("#submit").attr('disabled', 'disabled');
                 } else if(resp == "notexists") {
-                  
+                  $("#submit").removeAttr('disabled');
                   $("<span class='aval'>Pseudo disponible!</span>").insertAfter("#pseudo");
+                
                 }
               }
             });
