@@ -19,8 +19,7 @@ confirm_password.onkeyup = validatePassword;
         if(username != "") {
           var len = username.length;
           if(len >=5 && len <= 10) {
-            //Username must be 5 to 10 characters long.
-            //Change accrodangly yours
+            //Pseudo entre 5 et 10 caracteres
             $.ajax({
               url:"verif.php",
               data:{identifiant:username},
@@ -29,7 +28,6 @@ confirm_password.onkeyup = validatePassword;
                 var resp = $.trim(response);
                 $(".aval,.exists, .wait").remove();
                 if(resp == "exists") {
-                  //If username already exists it will display the following message
                   $("<span class='exists'>Pseudo déjà utilisé!</span>").insertAfter("#pseudo");
                     $("#submit").attr('disabled', 'disabled');
                 } else if(resp == "notexists") {
